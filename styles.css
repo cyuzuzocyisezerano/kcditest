@@ -1,0 +1,1525 @@
+/* styles.css */
+:root {
+    --primary-color: #37474f; /* Blue-grey */
+    --secondary-color: #ffffff; /* White */
+    --accent-color: #90a4ae; /* Light Blue-grey */
+    --hover-color: #607d8b; /* Hover Effect */
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+header {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: none; /* Blue-grey background */
+    padding: 10px 20px;
+  }
+  
+  .navbar .logo a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--hover-color); /* Accent color */
+  }
+  
+  /* Hamburger Menu Icon */
+  .hamburger-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .hamburger-icon .line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+  }
+  
+  /* Responsive Styles for Mobile */
+  @media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .nav-links {
+        display: none; /* Hide the navigation by default */
+        position: fixed;
+        top: 70px;
+        left: 0;
+        height: 100vh; /* Full screen height */
+        width: 300px; /* Drawer width */
+        background-color: var(--primary-color); /* Use your primary color */
+        flex-direction: column;
+        justify-content: center; /* Center vertically */
+        align-items: flex-start; /* Align links to the left */
+        padding: 2rem; /* Add some padding */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+        transition: transform 0.3s ease-in-out; /* Smooth sliding */
+        transform: translateX(-100%); /* Hide off-screen by default */
+        z-index: 1000; /* Keep it on top of other elements */
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0); /* Slide into view */
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem; /* Add spacing between links */
+        width: 100%; /* Full width for clickable area */
+        text-align: left; /* Align text to the left */
+    }
+
+    .nav-links a:hover {
+        color: var(--hover-color); /* Add hover effect */
+    }
+
+    .hamburger-icon {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1100; /* Above the navigation */
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .hero {
+        transition: margin-left 0.3s ease-in-out;
+    }
+
+    .hero.shifted {
+        margin-left: 300px; /* Adjust content when menu is open */
+    }
+}
+
+
+  
+
+.hero {
+    background-image: url("images/success-4222903_1280.jpg");
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 5rem 2rem;
+    height: 694px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+#hero-pages {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 5rem 2rem;
+    
+    
+}
+.hero-content-index{
+    position:relative;
+    top: 150px;
+}
+
+.hero-content-index h1 {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+}
+.hero-content-index p{
+    color: white;
+} 
+
+.hero-content-index .btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.hero-content-index .btn:hover {
+    background: var(--hover-color);
+    transform: scale(1.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.about,
+.support {
+    text-align: center;
+}
+
+.programs {
+    padding: 2rem 0;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.program-card {
+    background: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+}
+
+/* General Section Styling */
+section {
+    padding: 4rem 2rem;
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0056b3;
+}
+
+p, li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Row Layout for Split Design */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Text Column Styling */
+.text {
+    text-align: left;
+    padding: 1rem;
+}
+
+/* Image Column Styling */
+.image {
+    text-align: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(80%); /* Optional for a minimalistic feel */
+}
+
+/* Section Background Colors */
+.purpose {
+    background: #f8f9fa;
+}
+
+.impact {
+    background: #fff;
+}
+
+.vision {
+    background: #f8f9fa;
+}
+
+/* Link Styling */
+a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+
+footer {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    text-align: left;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid var(--hover-color);
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-social li {
+    list-style: none;
+}
+
+.footer-social a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.footer-social a:hover img {
+    transform: scale(1.2);
+}
+
+/* How to Help Section */
+.how-to-help {
+    margin-top: 20px;
+  }
+  
+  .help-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    color: #040720;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Why Support Section */
+  .why-support ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .why-support li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .why-support li:before {
+    content: "✔";
+    color: #27ae60;
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Donate Section */
+  .donate {
+    background: #ADD8E6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+
+  
+
+
+  /* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Section Titles */
+  h2 {
+    text-align: center;
+    color: #607d8b; /* Blue-grey for section titles */
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    color: #455a64; /* Darker blue-grey for subheadings */
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+  }
+  
+  /* About Section */
+  .about p {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #607d8b; /* Blue-grey text */
+  }
+  
+  .about ul {
+    margin: 20px 0;
+    padding-left: 20px;
+  }
+  
+  .about ul li {
+    margin-bottom: 10px;
+    list-style-type: square;
+    color: #607d8b; /* Blue-grey */
+  }
+  
+  /* Values Section */
+  .values ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    margin: 20px 0;
+    list-style: none;
+  }
+  
+  .values ul li {
+    flex: 1 1 calc(50% - 20px);
+    background: white;
+    border: 1px solid #e0e0e0; /* Light grey border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #455a64; /* Dark blue-grey */
+  }
+  
+  .values ul li strong {
+    color: #607d8b; /* Blue-grey emphasis */
+  }
+  
+  /* Call to Action Section */
+  .call-to-action {
+    text-align: center;
+    background: #607d8b; /* Blue-grey background */
+    color: white;
+    padding: 40px 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+  }
+  
+  .call-to-action p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .call-to-action .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: white;
+    background-color: #455a64; /* Darker blue-grey */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .call-to-action .btn:hover {
+    background-color: #37474f; /* Darker shade on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .values ul li {
+      flex: 1 1 100%;
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    h3 {
+      font-size: 1.4rem;
+    }
+  
+    .call-to-action p {
+      font-size: 1rem;
+    }
+  
+    .call-to-action .btn {
+      padding: 12px 25px;
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .call-to-action {
+      padding: 20px;
+    }
+  
+    .call-to-action .btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    .about ul li {
+      font-size: 1rem;
+    }
+  }
+
+
+
+  /* About Us Section */
+#about-us {
+    background: #f4f7f6; /* Blue-grey background */
+    color: black;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  #about-us h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  #about-us p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* History Section */
+.history {
+    padding: 40px 20px;
+    background-color: #f4f7f6; /* Light background for contrast */
+  }
+  
+  .history h2 {
+    font-size: 2.2rem;
+    color: #607d8b; /* Blue-grey color */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .history p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+    padding-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Grid Layout for History Section */
+  .history .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .history .container .text {
+    padding: 20px;
+  }
+  
+  .history .container .image {
+    text-align: center;
+  }
+  
+  .history img {
+    width: 100%;
+    max-width: 600px; /* Make image responsive */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow to image for better appearance */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .history img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  /* Responsive Design for Small Screens */
+  @media (max-width: 768px) {
+    #about-us h1 {
+      font-size: 2rem;
+    }
+  
+    #about-us p {
+      font-size: 1.1rem;
+    }
+  
+    .history h2 {
+      font-size: 1.8rem;
+    }
+  
+    .history p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #about-us h1 {
+      font-size: 1.6rem;
+    }
+  
+    #about-us p {
+      font-size: 1rem;
+    }
+  
+    .history h2 {
+      font-size: 1.6rem;
+    }
+  
+    .history p {
+      font-size: 1rem;
+    }
+  
+    .history img {
+      max-width: 100%; /* Ensure image is fully responsive on mobile */
+    }
+  }
+  
+
+
+
+
+  /* General Styling for Contact Form */
+.contact {
+    padding: 40px 20px;
+    background-color: #f4f7f6; /* Light background color */
+  }
+  
+  .contact h2 {
+    font-size: 2.5rem;
+    color: #607d8b; /* Blue-grey color */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #455a64; /* Darker grey for paragraph */
+  }
+  
+  /* Form Container */
+  .contact .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 1.1rem;
+    color: #607d8b;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #607d8b; /* Highlight border when input is focused */
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .form-group button {
+    background-color: #607d8b;
+    color: white;
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  .form-group button:hover {
+    background-color: #455a64; /* Darker shade on hover */
+  }
+  
+  /* Responsive Design for Small Screens */
+  @media (max-width: 768px) {
+    .contact h2 {
+      font-size: 2rem;
+    }
+  
+    .contact p {
+      font-size: 1rem;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      font-size: 1rem;
+    }
+  
+    .form-group button {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact h2 {
+      font-size: 1.6rem;
+    }
+  
+    .contact p {
+      font-size: 0.9rem;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      font-size: 0.9rem;
+    }
+  
+    .form-group button {
+      font-size: 1rem;
+    }
+  }
+
+
+  /* programs */
+
+/* General Styles for the Programs Section */
+.programs {
+  padding: 4rem 2rem;
+  background-color: #f4f4f4;
+}
+
+.programs h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+/* Programs Container */
+.program {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns by default (image + text) */
+  gap: 2rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+/* Image Styling */
+.program img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 250px; /* Restrict image height */
+}
+
+/* Content Styling */
+.program-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title Styling */
+.program h3 {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Paragraph Styling */
+.program p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Responsive Styles for Tablets and Phones */
+@media (max-width: 768px) {
+  /* Adjust program layout to single column for smaller screens */
+  .program {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    padding: 1rem; /* Reduced padding for mobile */
+  }
+
+  .program img {
+    width: 100%; /* Ensure image takes full width on small screens */
+    border-radius: 8px; /* Apply rounded corners to the image */
+  }
+
+  .program-content {
+    padding: 0.5rem; /* Reduce padding for smaller screens */
+  }
+
+  .programs h2 {
+    font-size: 1.8rem; /* Adjust the heading font size */
+  }
+
+  .program h3 {
+    font-size: 1.4rem; /* Adjust the sub-heading font size */
+  }
+
+  .program p {
+    font-size: 0.9rem; /* Adjust the paragraph font size */
+  }
+}
+
+
+
+
+
+/* team */
+
+
+/* General Styles for the Leadership Team Section */
+.team {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.team h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Automatically adjusts to the screen size */
+  gap: 2rem;
+}
+
+.team-member {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  max-width: 150px;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Call to Action Section */
+.call-to-action {
+  background-color: var(--primary-color);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.call-to-action h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.call-to-action p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.call-to-action .btn {
+  padding: 0.8rem 2rem;
+  background-color: #fff;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.call-to-action .btn:hover {
+  background-color: #f4f4f4;
+}
+
+/* Responsive Styles for Tablets and Phones */
+@media (max-width: 768px) {
+  .team h2 {
+      font-size: 2rem; /* Adjust heading font size */
+  }
+
+  .team-member {
+      padding: 1.5rem;
+  }
+
+  .team-member h3 {
+      font-size: 1.4rem; /* Adjust sub-heading font size */
+  }
+
+  .team-member p {
+      font-size: 0.9rem; /* Adjust paragraph font size */
+  }
+
+  .call-to-action h2 {
+      font-size: 1.8rem; /* Adjust heading font size */
+  }
+
+  .call-to-action p {
+      font-size: 1rem; /* Adjust paragraph font size */
+  }
+
+  .call-to-action .btn {
+      font-size: 1rem; /* Adjust button font size */
+  }
+}
+
+  
+
+/* mission */
+
+/* Mission Page Layout */
+.mission-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mission Section */
+.mission h2 {
+  color: var(--hover-color);
+  margin-bottom: 1rem;
+}
+
+.mission p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.mission img.feature-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus Areas Section */
+.core-values {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.value {
+  padding: 1rem;
+  border-left: 4px solid var(--hover-color);
+  background: #f9f9f9;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.value img {
+  max-width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.value h4 {
+  color: var(--hover-color);
+  margin-bottom: 0.5rem;
+  font-style: bold;
+}
+
+/* Biblical Verse Section */
+.biblical-verse {
+  margin-top: 2rem;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+.biblical-verse blockquote {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.biblical-verse img {
+  display: block;
+  max-width: 100%;
+  height: 300px;
+  margin: 1rem auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.verse-reference {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+
+/* Tablets (768px and above) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mission-page {
+      padding: 1.5rem;
+  }
+
+  .core-values {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .biblical-verse blockquote {
+      font-size: 1.3rem;
+  }
+}
+
+/* Phones (up to 768px) */
+@media (max-width: 768px) {
+  .mission-page {
+      padding: 1rem;
+  }
+
+  .core-values {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+  }
+
+  .value img {
+      max-width: 100px;
+      height: 100px;
+      margin-bottom: 0.5rem;
+  }
+
+  .mission img.feature-image, .biblical-verse img {
+      border-radius: 5px;
+  }
+
+  .biblical-verse blockquote {
+      font-size: 1.2rem;
+  }
+
+  .verse-reference {
+      font-size: 0.9rem;
+  }
+}
+
+/* vision */
+
+/* Vision Page Layout */
+.vision-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Introduction Section */
+.introduction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.introduction h2 {
+  color: var(--hover-color);
+  margin-bottom: 1rem;
+  grid-column: span 2; /* H2 spans both columns */
+  text-align: center;
+}
+
+.introduction p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.introduction img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  justify-self: center;
+}
+
+
+/* Long-Term Goals Section */
+.long-term-goals h2 {
+  color: var(--hover-color);
+  margin-bottom: 1rem;
+}
+
+.long-term-goals ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.long-term-goals li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.long-term-goals li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--hover-color);
+  font-size: 1.2rem;
+}
+
+.long-term-goals strong {
+  color: var(--hover-color);
+}
+
+/* Biblical Foundation Section */
+.biblical-foundation {
+  margin-top: 2rem;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+.biblical-foundation blockquote {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.biblical-foundation .verse-reference {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+
+/* Tablets (768px and above) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .vision-page {
+      padding: 1.5rem;
+  }
+
+  .introduction {
+    grid-template-columns: 1fr;
+  }
+
+  .introduction h2 {
+    grid-column: span 1; /* H2 spans one column */
+  }
+
+  .introduction img {
+    height: 200px; /* Maintain the fixed height on smaller screens */
+  }
+
+  .long-term-goals li {
+      font-size: 1rem;
+      padding-left: 1rem;
+  }
+
+  .biblical-foundation blockquote {
+      font-size: 1.3rem;
+  }
+}
+
+/* Phones (up to 768px) */
+@media (max-width: 768px) {
+  .vision-page {
+      padding: 1rem;
+  }
+
+  .introduction h2 {
+      font-size: 1.5rem;
+      text-align: center;
+  }
+
+  .introduction p {
+      font-size: 1rem;
+      line-height: 1.5;
+  }
+
+  .introduction img {
+      max-width: 100%;
+      margin: 1rem auto;
+  }
+
+  .long-term-goals ul {
+      padding: 0;
+  }
+
+  .long-term-goals li {
+      font-size: 0.9rem;
+      padding-left: 1rem;
+  }
+
+  .long-term-goals li::before {
+      font-size: 1rem;
+  }
+
+  .biblical-foundation blockquote {
+      font-size: 1.1rem;
+  }
+
+  .biblical-foundation .verse-reference {
+      font-size: 0.9rem;
+  }
+
+  .footer {
+      font-size: 0.9rem;
+  }
+}
+
+/* values */
+
+/* Core Values Section */
+.core-values {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.core-values h2 {
+  color: var(--hover-color);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.core-value {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.value-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 320px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.value-img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  color: var(--hover-color);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.value-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .core-values {
+      padding: 1.5rem;
+  }
+
+  .core-value {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .value-card {
+      width: 90%;
+      margin-bottom: 2rem;
+  }
+
+  .value-card h3 {
+      font-size: 1.2rem;
+  }
+
+  .value-card p {
+      font-size: 0.95rem;
+  }
+}
+
+
+/* our story */
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  color: var(--hover-color);
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* Main Content Layout */
+.our-story {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styling */
+h2 {
+  color: var(--hover-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.story-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.story-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header h1 {
+      font-size: 2rem;
+  }
+
+  .header p {
+      font-size: 1rem;
+  }
+
+  .our-story {
+      padding: 1rem;
+  }
+
+  .story-text {
+      font-size: 1rem;
+  }
+
+  h2 {
+      font-size: 1.5rem;
+  }
+
+  .story-img {
+      max-height: 300px;
+      object-fit: cover;
+  }
+}
+
+
